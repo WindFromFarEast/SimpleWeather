@@ -1,6 +1,7 @@
 package com.studio.simpleweather.util;
 
 import android.text.TextUtils;
+import android.widget.Toast;
 
 import com.studio.simpleweather.db.City;
 import com.studio.simpleweather.db.County;
@@ -87,7 +88,7 @@ public class Utility
                     JSONObject countyObject=allCounties.getJSONObject(i);
                     County county=new County();
                     county.setCountyName(countyObject.getString("name"));
-                    county.setWeatherId(countyObject.getString("weather_Id"));
+                    county.setWeatherId(countyObject.getString("weather_id"));
                     county.setCityId(cityId);
                     county.save();
                 }

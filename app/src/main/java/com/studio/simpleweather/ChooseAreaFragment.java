@@ -3,6 +3,7 @@ package com.studio.simpleweather;
 import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -179,7 +180,7 @@ public class ChooseAreaFragment extends Fragment
         {
             int provinceCode=selectedProvince.getProvinceCode();
             int cityCode=selectedCity.getCityCode();
-            String address="http://guolin.tech/api/china"+provinceCode+"/"+cityCode;
+            String address="http://guolin.tech/api/china/"+provinceCode+"/"+cityCode;
             queryFromServer(address,"county");
         }
     }
@@ -242,6 +243,18 @@ public class ChooseAreaFragment extends Fragment
                             {
                                 queryCounties();
                             }
+                        }
+                    });
+                }
+                else
+                {
+                    getActivity().runOnUiThread(new Runnable()
+                    {
+                        @Override
+                        public void run()
+                        {
+                            closeProgressDialog();
+                            Toast.makeText(getContext(),"网络连接错误",Toast.LENGTH_SHORT).show();
                         }
                     });
                 }
