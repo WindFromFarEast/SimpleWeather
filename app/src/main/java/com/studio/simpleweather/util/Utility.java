@@ -1,11 +1,13 @@
 package com.studio.simpleweather.util;
 
 import android.text.TextUtils;
+import android.util.Log;
 
 import com.google.gson.Gson;
 import com.studio.simpleweather.db.City;
 import com.studio.simpleweather.db.County;
 import com.studio.simpleweather.db.Province;
+import com.studio.simpleweather.gson.Image;
 import com.studio.simpleweather.gson.Weather;
 
 import org.json.JSONArray;
@@ -121,4 +123,27 @@ public class Utility
         }
         return null;
     }
+
+    /**
+     * 将必应壁纸api返回的数据解析成图片地址
+     */
+    public static String handleBingPictureResponse(String response)
+    {
+        String bingPic=null;
+        try
+        {
+            JSONObject jsonObject = new JSONObject(response);
+            JSONArray jsonArray=jsonObject.getJSONArray("images");
+            String bingContent=jsonArray.getJSONObject(0).toString();
+            Image image=new Gson().fromJson(bingContent,Image.class);
+            bingPic="http://cn.bing.com"+image.url;
+            Log.d("cccccccccccccc",bingPic);
+        }
+        catch (JSONException e)
+        {
+            e.printStackTrace();
+        }
+        return bingPic;
+    }
+
 }
