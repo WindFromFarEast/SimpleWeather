@@ -137,7 +137,6 @@ public class Utility
             String bingContent=jsonArray.getJSONObject(0).toString();
             Image image=new Gson().fromJson(bingContent,Image.class);
             bingPic="http://cn.bing.com"+image.url;
-            Log.d("cccccccccccccc",bingPic);
         }
         catch (JSONException e)
         {
