@@ -1,11 +1,18 @@
 # SimpleWeather
 Version 1.0
 
-A weather app developed by WindFromFarEast(Xiang Weixin).
+一款简洁的天气App
 
-With this app,you can get some important weather information such as temperature,pm2.5,aqi,suggestion and so on(Other parametres will be added in later versions). The free weather api affects the stability of this app,so sometimes the update of weather information will delay or even the server cannot be accessed.
+功能：
+1、可以查看全国各个地区的天气情况
+2、每日自动更换应用壁纸
+3、后台自动更新
+4、耗电量小（这是当然的啦哈哈哈）
 
-Frameworks-Used:Litepal,JSON,Gson
-UI:Material Design(Part of UI uses MD,not all)
+注意事项：
+由于使用了免费的天气接口，因此每天4000次访问次数用尽后将无法再次更新天气数据
 
-Developer E-mail:fromfareastqaq@gmail.com
+用到的开源库：Glide、LitePal、GSON、OkHttp
+UI设计规范：一部分UI设计用到了Material Design
+
+开发者邮箱:fromfareastqaq@gmail.com
