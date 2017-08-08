@@ -3,6 +3,8 @@ Version 1.0
 
 一款简洁的天气App
 
+![image](https://github.com/WindFromFarEast/SimpleWeather/blob/master/resultPic/SimpleWeather.gif)
+
 功能：
 
 1、可以查看全国各个地区的天气情况
